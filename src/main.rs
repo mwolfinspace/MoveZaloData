@@ -44,7 +44,7 @@ fn main() {
             }
             //Thực hiện sao chép ZaloPC sang ổ D
             print!("Dang sao luu ZaloPC sang {}...", &base_path);
-            copy_dir_all(&b, backup).expect("Error in copying files!");
+            copy_dir_all(&b, &backup).expect("Error in copying files!");
             println!(" Xong!");
             //Thực hiện xoá ZaloPC ở ổ C
             print!("Dang xoa thu muc ZaloPC goc o duong dan {}... ", b.display());
@@ -57,15 +57,29 @@ fn main() {
             .arg("mklink")
             .arg("/d")
             .arg(&b)
-            .arg(&base)
+            .arg(&base_path)
             .output().expect("Error in making mklink!");
             println!(" Xong!");
             //Thực hiện đổi tên Backup thành ZaloPC
             print!("Dang thuc hien chuyen ZaloBackup thanh ZaloPC...");
-            if base.exists(){
+            if base.exists() {
                 fs::remove_dir_all(&base_path).expect("Error in delete default mklink folder!");
-            }
-            fs::rename(backup_path, base_path).expect("Error in renaming BackupZalo to ZaloPC!");
+                std::process::Command::new("cmd")
+                .arg("/C")
+                .arg("ren")
+                .arg(&backup)
+                .arg("ZaloPC")
+                .output().expect("Error in renaming folder!");
+                //fs::rename(&backup_path, &base_path).expect("Error in renaming BackupZalo to ZaloPC!");
+            println!(" Xong!");
+            } 
+            std::process::Command::new("cmd")
+            .arg("/C")
+            .arg("REN")
+            .arg(&backup)
+            .arg("ZaloPC")
+            .output().expect("Error in renaming folder!");
+            //fs::rename(&backup_path, &base_path).expect("Error in renaming BackupZalo to ZaloPC!");
             println!(" Xong!");
             unsafe {
                 winuser::MessageBoxW(NULL(), box_msg_complete.as_ptr(), box_title.as_ptr(), winuser::MB_OK | winuser::MB_ICONINFORMATION);
