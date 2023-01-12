@@ -48,11 +48,11 @@ fn main() {
             copy_dir_all(&b, &backup).expect("Error in copying files!");
             println!(" Xong!");
             //Thực hiện xoá ZaloPC ở ổ C
-            print!("Dang xoa thu muc ZaloPC goc o duong dan {}... ", b.display());
+            println!("Dang xoa thu muc ZaloPC goc o duong dan {}... ", b.display());
             fs::remove_dir_all(&b).expect("Error in deleting ZaloPC in driver C!");
             println!(" Xong!");
             //Thực hiện mklink cho ZaloPC
-            print!("Dang tao lenh mklink ve thu muc ZaloPC goc...");
+            println!("Dang tao lenh mklink ve thu muc ZaloPC goc...");
             std::process::Command::new("cmd")
             .arg("/C")
             .arg("mklink")
@@ -61,19 +61,13 @@ fn main() {
             .arg(&base_path)
             .output().expect("Error in making mklink!");
             println!(" Xong!");
-            //Thực hiện đổi tên Backup thành ZaloPC
-            print!("Dang thuc hien chuyen ZaloBackup thanh ZaloPC...");
+            println!("Dang thuc hien chuyen ZaloBackup thanh ZaloPC...");
+            //Kiểm tra và xoá thư mục ZaloPC đã bị trùng trước đó
             if base.exists() {
                 fs::remove_dir_all(&base_path).expect("Error in delete default mklink folder!");
-                std::process::Command::new("cmd")
-                .arg("/C")
-                .arg("ren")
-                .arg(&backup)
-                .arg("ZaloPC")
-                .output().expect("Error in renaming folder!");
-                //fs::rename(&backup_path, &base_path).expect("Error in renaming BackupZalo to ZaloPC!");
-            println!(" Xong!");
-            } 
+                //println!(" Xong!");
+            }
+            //Thực hiện đổi tên Backup thành ZaloPC
             std::process::Command::new("cmd")
             .arg("/C")
             .arg("REN")
