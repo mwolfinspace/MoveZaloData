@@ -63,9 +63,9 @@ fn main() {
             //Thực hiện đổi tên Backup thành ZaloPC
             print!("Dang thuc hien chuyen ZaloBackup thanh ZaloPC...");
             if base.exists(){
-                fs::remove_dir_all("D:\\ZaloPC").expect("Error in delete default mklink folder!");
+                fs::remove_dir_all(&base_path).expect("Error in delete default mklink folder!");
             }
-            fs::rename("D:\\ZaloBackup", "D:\\ZaloPC").expect("Error in renaming BackupZalo to ZaloPC!");
+            fs::rename(backup_path, base_path).expect("Error in renaming BackupZalo to ZaloPC!");
             println!(" Xong!");
             unsafe {
                 winuser::MessageBoxW(NULL(), box_msg_complete.as_ptr(), box_title.as_ptr(), winuser::MB_OK | winuser::MB_ICONINFORMATION);
