@@ -43,7 +43,8 @@ fn main() {
                 }
             }
             //Thực hiện sao chép ZaloPC sang ổ D
-            print!("Dang sao luu ZaloPC sang {}...", &base_path);
+            println!("Bat dau chuyen du lieu... vui long doi...!");
+            println!("Dang sao luu ZaloPC sang {}...", &base_path);
             copy_dir_all(&b, &backup).expect("Error in copying files!");
             println!(" Xong!");
             //Thực hiện xoá ZaloPC ở ổ C
