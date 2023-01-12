@@ -14,6 +14,6 @@ Hướng dẫn sử dụng:
 - Bước 5: Bấm Yes để tiếp tục, kiểm tra tên đường dẫn ở cửa sổ xem có đúng ổ đĩa bạn chọn chưa.
 - Bước 6: Đợi đến khi có thông báo hoàn tất. Bấm OK rồi mở lại Zalo.
 
-Lưu ý: Sau khi chạy xong chương trình, bạn vào ổ cứng kiểm tra xem đã có thư mục ZaloPC được chuyển qua chưa. Nếu có xuất hiện thư mục ZaloPC thì việc chuyển thành công. Không chạy lại chương trình này nữa (nếu chạy thêm lần nữa thì dử liệu sẽ bị xoá mất).
+Lưu ý: Sau khi chạy xong chương trình, bạn vào ổ cứng kiểm tra xem đã có thư mục ZaloPC được chuyển qua chưa. Nếu có xuất hiện thư mục ZaloPC thì việc chuyển thành công. Không chạy lại chương trình này nữa (nếu chạy thêm lần nữa thì dữ liệu sẽ bị xoá mất).
 
 Chúc các bạn thành công.
