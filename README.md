@@ -2,7 +2,7 @@
 Mặc định Zalo cài vào ổ C và nằm trong thư mục tạm của máy. Khi sử dụng ZaloPC, cho dù người dùng có tải về tài liệu hay hình ảnh thì tất cả tập tin đều được lưu vào thư mục %localappdata% của người dùng. Về lâu dài chính những tập tin tạm này sẽ khiến ổ C đầy lên gây lỗi chiếm rất nhiều dung lượng.
 Có hai hướng giải quyết cho vấn đề này:
 - Hướng 1: Xoá ZaloPC và các thư mục tạm đi kèm, chuyển sang dùng Zalo nền web.
-- Hướng 2: Chuyển dữ liệu tạm trong ZaloPC sang ổ cứng khác có dung lượng lớn hơn và tự xoá định kỳ khi đầy.
+- Hướng 2: Chuyển dữ liệu tạm trong ZaloPC sang ổ cứng khác có dung lượng lớn hơn và người dùng tự xoá bớt khi đầy.
 
 Chương trình này được viết ra để thực hiện các thao tác phức tạp của Hướng 2 dành cho người không rành về câu lệnh và hệ thống thư mục.
 Hướng dẫn sử dụng:
